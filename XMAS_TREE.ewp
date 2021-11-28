@@ -256,17 +256,13 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state>$PROJ_DIR$\BSP</state>
                     <state>$PROJ_DIR$</state>
+                    <state>$PROJ_DIR$\UTILS</state>
                     <state>$PROJ_DIR$\TEST</state>
-                    <state>$PROJ_DIR$\LIBS</state>
                     <state>$PROJ_DIR$\LIBS\LED</state>
                     <state>$PROJ_DIR$\LIBS\PWM</state>
                     <state>$PROJ_DIR$\LIBS\TIMER</state>
                     <state>$PROJ_DIR$\LIBS\RANDOM</state>
-                    <state>$PROJ_DIR$\LIBS\FRAME_BUFFER</state>
-                    <state>$PROJ_DIR$\LIBS\FRAME_BUFFER\GENERATOR</state>
-                    <state>$PROJ_DIR$\LIBS\FRAME_BUFFER\CONTROLLER</state>
                     <state>$PROJ_DIR$\HAL\STM8L10x_StdPeriph_Driver</state>
                     <state>$PROJ_DIR$\HAL\STM8L10x_StdPeriph_Driver\inc</state>
                 </option>
@@ -1846,18 +1842,12 @@
         <name>LIBS</name>
         <group>
             <name>LED</name>
-            <group>
-                <name>INC</name>
-                <file>
-                    <name>$PROJ_DIR$\LIBS\LED\led.h</name>
-                </file>
-            </group>
-            <group>
-                <name>SRC</name>
-                <file>
-                    <name>$PROJ_DIR$\LIBS\LED\led.c</name>
-                </file>
-            </group>
+            <file>
+                <name>$PROJ_DIR$\LIBS\LED\led.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\LIBS\LED\led.h</name>
+            </file>
         </group>
         <group>
             <name>RANDOM</name>

@@ -3,7 +3,6 @@
 #include "bsp_conf.h"
 #include "led.h"
 #include "timer.h"
-#include "pwm.h"
 #include "random.h"
 
 void led_test(void)

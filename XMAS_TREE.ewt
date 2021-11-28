@@ -2295,18 +2295,12 @@
         <name>LIBS</name>
         <group>
             <name>LED</name>
-            <group>
-                <name>INC</name>
-                <file>
-                    <name>$PROJ_DIR$\LIBS\LED\led.h</name>
-                </file>
-            </group>
-            <group>
-                <name>SRC</name>
-                <file>
-                    <name>$PROJ_DIR$\LIBS\LED\led.c</name>
-                </file>
-            </group>
+            <file>
+                <name>$PROJ_DIR$\LIBS\LED\led.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\LIBS\LED\led.h</name>
+            </file>
         </group>
         <group>
             <name>RANDOM</name>
