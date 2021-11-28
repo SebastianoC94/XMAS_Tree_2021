@@ -59,5 +59,6 @@ The TIM3 interrupt will contain a global interrupt counter, which will be increm
 It will then turn on the i-th LED if and only if sequences_done < num_slots_on_array[i].
 Given the high frequency with which the TIM 3 interrupt is called, the operations described above allow to generate a different software PWM for each LED.
 
-The TIM2 interrupt is called with a frequency of 60 Hz. This interrupt modifies the value of num_slots_on_array[i]. Each time it is called, the value of num_slots_on_array[i] of TIM_SLOTS_DELTA can be incremented or decremented.
+The TIM2 interrupt is called with a frequency of 60 Hz. This interrupt modifies the value of num_slots_on_array[i]. Each time it is called, the value of num_slots_on_array[i] of N x TIM_SLOTS_DELTA .
+N is a speed coefficient randomly determined at device startup and can take value 1,2 or 3.
 This operation is equivalent to changing the duty-cycle of the 10 kHz PWM.At each call the value of num_slots_on_array[i] is checked and if it goes out of the range [0,200] the sign of the arithmetic sum is reversed, so that num_slots_on_array[i] remains within the described range. This sign will be kept until num_slots_on_array[i] reaches the opposite limit of the range previously described.  This generates a "breathing" effect for each LED. In the TIM2 interrupt routine the value of sequences_done is also reset, so that the analysis of the TIM3 routine can be repeated.
