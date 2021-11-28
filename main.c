@@ -6,13 +6,23 @@
 #include "timer.h"
 #include "random.h"
 #include "test.h"
+#include "structs.h"
 
 #define MAX_NUM_SEQ_GLB_CNT             (2000U)
 
 extern volatile uint32_t sequences_glb_counter;
-extern volatile uint8_t num_slots_on_array[8];
-extern volatile DIRECTION direction[8];
-extern volatile LED_CHANGE_SPEED speed[8];
+
+extern volatile LED_Manager led_man;
+
+static void led_manager_init()
+{
+  for(uint8_t i= 0; i < NUM_LED_USED; i++)
+    {
+      led_man.descr[i].num_slots_on_array = random_number(0,TIM_SLOTS);
+      led_man.descr[i].direction = (DIRECTION)random_number(TO_MINIMUM,TO_MAXIMUM);
+      led_man.descr[i].speed = (LED_CHANGE_SPEED)random_number(NORMAL_SPEED,TRIPLE_SPEED);
+    }
+}
 
 static void BSP_GPIO_Init()
 {  
@@ -55,14 +65,9 @@ void BSP_Post_Halt_Init(uint8_t on_demand)
   if(sequences_glb_counter == MAX_NUM_SEQ_GLB_CNT || on_demand)
   {
     InitSeed();
-  
-    for(uint8_t i= 0; i < 8; i++)
-    {
-      num_slots_on_array[i] = random_number(0,40);
-      direction[i] = (DIRECTION)random_number(TO_MINIMUM,TO_MAXIMUM);
-      speed[i] = (LED_CHANGE_SPEED)random_number(NORMAL_SPEED,TRIPLE_SPEED);
-    }
     
+    led_manager_init();
+      
     CLK_MasterPrescalerConfig(CLK_MasterPrescaler_HSIDiv1);
   
     BSP_GPIO_Init(); 

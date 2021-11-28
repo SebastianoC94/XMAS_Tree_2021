@@ -43,7 +43,7 @@
 //#include "stm8l10x_i2c.h"
 //#include "stm8l10x_irtim.h"
 //#include "stm8l10x_itc.h"
-#include "stm8l10x_iwdg.h"
+//#include "stm8l10x_iwdg.h"
 #include "stm8l10x_rst.h"
 //#include "stm8l10x_spi.h"
 #include "stm8l10x_tim2.h"

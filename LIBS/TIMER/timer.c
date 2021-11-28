@@ -1,10 +1,9 @@
 #include "stm8l10x_conf.h"
 #include "timer.h"
      
-
 volatile uint32_t delay_time_keeper = 0;
 
-//Genera interrupt con f_tim2 = 60 Hz
+//f_tim2 = 60 Hz
 void TIM2_Config(void)
 {
   uint32_t f_cpu = CLK_GetClockFreq() / 32;
@@ -24,7 +23,7 @@ void TIM2_Config(void)
 }
 
 
-//Genera interrupt con f_tim_3 = 10 kHz
+//f_tim_3 = 12 kHz
 void TIM3_Config(void)
 {
   uint32_t f_cpu = CLK_GetClockFreq();
@@ -43,8 +42,8 @@ void TIM3_Config(void)
   TIM3_Cmd(ENABLE);
 }
 
-
-void TIM4_Config(void) // 1 ms timebase
+// f_tim_4 = 1 kHz
+void TIM4_Config(void) 
 {
    uint32_t f_cpu = CLK_GetClockFreq() / 128;
    uint16_t ARR = f_cpu / F_TIM_4;

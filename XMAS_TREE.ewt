@@ -2156,7 +2156,10 @@
     <group>
         <name>BSP</name>
         <file>
-            <name>$PROJ_DIR$\BSP\bsp_conf.h</name>
+            <name>$PROJ_DIR$\UTILS\bsp_conf.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\UTILS\structs.h</name>
         </file>
     </group>
     <group>

@@ -1,5 +1,4 @@
 #include "led.h"
-
 #include "bsp_conf.h"
 #include "stm8l10x_gpio.h"
 
